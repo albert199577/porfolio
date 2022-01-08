@@ -5,44 +5,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Albert's Portfolio</title>
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <nav class="nav-flex">
-        <div class="logo">Albert's BlOG</div>
-        <!-- <div class="search">
-            <span><i class="fas fa-search"></i></span>
-            <input type="text" name="search" id="search">
-        </div> -->
-        <ul class="menu">
-            <li><i class="fas fa-home"></i><a href="">Home</a></li>
-            <li><i class="far fa-user"></i><a href="">About</a></li>
-            <li><i class="far fa-file"></i><a href="">Resume</a></li>
-            <li><i class="far fa-newspaper"></i><a href="">Portfolio</a></li>
-            <li><i class="far fa-envelope"></i><a href="">Contact</a></li>
-        </ul>
-    </nav>
-    
-    <main class="portfolio">
-        <section class="intro container">
-            <h2>Portfolio</h2>
-            <p>Hey, I'm Albert Kao</p>
-            <p>Freelance Creative & Professional Graphics Designer</p>
-        </section>
-        <ul class="container ">
-            <li class="grid_1"><a href="./"></a></li>
-            <li class="b"><a href="#"></a></li>
-            <li class="grid_2"><a href="./chapter-7-9/dist/index.html"></a></li>
-            <li class="grid_3"></li>
-            <li class="grid_4"></li>
-            <li class="grid_5"></li>
-            <li class="grid_6"></li>
-            <li class="grid_7"></li>
-            <li class="grid_8"></li>
-        </ul>
-    </main>
+    <section class="portfolio-page">
+        <nav class="nav-flex">
+            <div class="logo">Albert's BlOG</div>
+            <!-- <div class="search">
+                <span><i class="fas fa-search"></i></span>
+                <input type="text" name="search" id="search">
+            </div> -->
+            <ul class="menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Resume</a></li>
+                <li><a href="">Portfolio</a></li>
+                <li><a href="">Contact</a></li>
+                <a href="" class="icon"><i class="fa fa-bars"></i></a>
+            </ul>
+        </nav>
+        <main class="portfolio">
+            <section class="intro container">
+                <section>
+                    <h2>Portfolio</h2>
+                    <p>Hey, I'm Albert Kao</p>
+                    <p>Freelance Creative & Professional Graphics Designer</p>
+                </section>
+            </section>
+            <section class="container list-menu">
+                <ul class="protfolio-list-menu">
+                    <li>ALL</li>
+                    <li>WEB</li>
+                    <li>DESIGN</li>
+                </ul>
+            </section>
+            <ul class="container protfolio-list">
+                <li class="grid_1"><a href="./"></a></li>
+                <li class="b"><a href="#"></a></li>
+                <li class="grid_2"><a href="./chapter-7-9/dist/index.html"></a></li>
+                <!-- <li class="grid_3"></li>
+                <li class="grid_4"></li>
+                <li class="grid_5"></li>
+                <li class="grid_6"></li>
+                <li class="grid_7"></li>
+                <li class="grid_8"></li> -->
+            </ul>
+        </main>
+    </section>
+    <section class="container p-5">
+        <form action="" method="POST" class="form border border-info p-4 mx-auto w-50  bg-white">
+            <h2 class="text-info">Contact</h2>
+            <div class="row">
+                <div class="col">
+                    <label for="">Your name</label>
+                    <input type="text" class="form-control" name="name">
+                </div>
+                <div class="col">
+                    <label for="">Your mail</label>
+                    <input type="text" class="form-control" name="mail">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="exampleFormControlTextarea1">subject</label>
+                    <input type="text" class="form-control" name="subject">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">message</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        </form>
+    </section>
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>

@@ -6,8 +6,11 @@
 html, body {
   padding: 0;
   margin: 0;
-  width: 100%;
   height: 100%;
+}
+
+body {
+  background-color: #f5f8fd;
 }
 
 .container {
@@ -65,12 +68,14 @@ nav {
   background-color: white;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
+  z-index: 99;
 }
 
 nav .logo {
   margin: 0 3rem;
   font-weight: 900;
   font-size: 1.5rem;
+  color: #149ddd;
 }
 
 nav .menu {
@@ -85,17 +90,12 @@ nav .menu {
 }
 
 nav .menu li {
-  margin: 0 .5rem;
+  margin: 0 .7rem;
 }
 
 nav .menu li a {
   text-decoration: none;
-  color: #858282;
-}
-
-nav .menu li i {
-  margin: auto 5px;
-  display: inline-block;
+  color: #09777d;
 }
 
 main {
@@ -105,8 +105,9 @@ main {
 
 main .intro {
   padding: 2rem;
-  background-size: cover;
-  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 main .intro h2 {
@@ -130,109 +131,140 @@ main .intro p {
   font-weight: bold;
 }
 
-main ul {
+main .list-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .list-menu ul.protfolio-list-menu {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 50px;
+  height: 35px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .list-menu li {
+  margin: 0 .7rem;
+  width: 5rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+main ul.protfolio-list {
   list-style-type: none;
   display: -ms-grid;
   display: grid;
-  padding: 3rem;
-  margin: 0;
+  padding: 1rem 3rem;
+  margin: auto;
   grid-gap: 10px;
   min-height: 100vh;
   width: 100%;
   justify-items: center;
-  -ms-grid-rows: (minmax(30%, 1fr))[auto-fit];
-      grid-template-rows: repeat(auto-fit, minmax(30%, 1fr));
+  -ms-grid-rows: (minmax(30vw, 1fr))[auto-fit];
+      grid-template-rows: repeat(auto-fit, minmax(30vw, 1fr));
   -ms-grid-columns: (minmax(30%, 1fr))[3];
       grid-template-columns: repeat(3, minmax(30%, 1fr));
       grid-template-areas: "grid_1 big big" "grid_2 big big" "grid_3 grid_4 grid_5" "grid_6 grid_7 grid_8";
 }
 
-main ul li {
+main ul.protfolio-list li {
   width: 100%;
   height: 100%;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 4px;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
   overflow: none;
 }
 
-main ul li:hover {
+main ul.protfolio-list li:hover {
   -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
           box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
 }
 
-main ul li a {
+main ul.protfolio-list li a {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-main ul .grid_1 {
+main ul.protfolio-list .grid_1 {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: grid_1;
 }
 
-main ul .grid_2 {
+main ul.protfolio-list .grid_2 {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: grid_2;
 }
 
-main ul .grid_3 {
+main ul.protfolio-list .grid_3 {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: grid_3;
 }
 
-main ul .grid_4 {
+main ul.protfolio-list .grid_4 {
   -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: grid_4;
 }
 
-main ul .grid_5 {
+main ul.protfolio-list .grid_5 {
   -ms-grid-row: 3;
   -ms-grid-column: 3;
   grid-area: grid_5;
 }
 
-main ul .grid_6 {
+main ul.protfolio-list .grid_6 {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: grid_6;
 }
 
-main ul .grid_7 {
+main ul.protfolio-list .grid_7 {
   -ms-grid-row: 4;
   -ms-grid-column: 2;
   grid-area: grid_7;
 }
 
-main ul .grid_8 {
+main ul.protfolio-list .grid_8 {
   -ms-grid-row: 4;
   -ms-grid-column: 3;
   grid-area: grid_8;
 }
 
-main ul .grid_1 {
+main ul.protfolio-list .grid_1 {
   background: url("./img/guess.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 110%;
 }
 
-main ul .grid_2 {
+main ul.protfolio-list .grid_2 {
   background: url("./img/weather.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 110%;
 }
 
-main ul .b {
+main ul.protfolio-list .b {
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   -ms-grid-column: 2;
