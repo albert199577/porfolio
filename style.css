@@ -59,7 +59,7 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 4rem;
+  min-height: 4rem;
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px 1px;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px 1px;
   position: -webkit-sticky;
@@ -71,11 +71,18 @@ nav {
   z-index: 99;
 }
 
-nav .logo {
+nav div .logo {
   margin: 0 3rem;
   font-weight: 900;
   font-size: 1.5rem;
   color: #149ddd;
+}
+
+nav div .icon {
+  display: none;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #09777d;
 }
 
 nav .menu {
@@ -93,9 +100,38 @@ nav .menu li {
   margin: 0 .7rem;
 }
 
-nav .menu li a {
-  text-decoration: none;
-  color: #09777d;
+@media (max-width: 800px) {
+  .nav-flex {
+    display: block;
+    position: relative;
+  }
+  .nav-flex div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    height: 64px;
+  }
+  .nav-flex div .icon {
+    display: inline-block;
+    float: right;
+  }
+  .nav-flex .menu {
+    display: none;
+  }
+  .nav-flex .menu.responsive {
+    display: block;
+  }
+  .nav-flex .menu.responsive li {
+    display: block;
+    margin: .5rem auto;
+  }
 }
 
 main {
