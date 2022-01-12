@@ -129,28 +129,32 @@ nav
                 li
                     i
                         margin: 1rem
-                        font-size: 2rem
+                        font-size: 1.7rem
         .img    
             display: flex
             justify-content: center
             align-items: center
+            
+            img
+                border: 10px solid rgba(0, 0, 0, .3)
+                border-radius: 50%
 @media (max-width: 1300px)
-    .about
+    .home
         margin: 0
         display: flex
         .intro
             align-items: center
             flex-flow: wrap column-reverse
-@media (max-width: 1000px)
-    .about
-        .intro
-            .intro_myself
-                h1
-                    font-size: 4rem
-                h4
-                    font-size: 3.5rem
-@media (max-width: 800px)
-    .about
+// @media (max-width: 1000px)
+//     .home
+//         .intro
+//             .intro_myself
+//                 h1
+//                     font-size: 4rem
+//                 h4
+//                     font-size: 3.5rem
+@media (max-width: 600px)
+    .home
         margin: 0
         display: flex
         .intro
@@ -159,15 +163,17 @@ nav
             flex-flow: wrap column-reverse
             .intro_myself
                 h1
-                    font-size: 2rem
+                    font-size: 3rem
                 h4
                     font-size: 1.5rem
+                    margin: 0 .5rem
+                    text-align: center
                 ul 
                     justify-content: center
                     li
                         i
                             margin: 1rem
-                            font-size: 1rem
+                            font-size: 2rem
 
 .about-page
     background-color: $color_blue_background
@@ -194,10 +200,36 @@ nav
         padding: 4rem
         .svg
             svg
-                width: 500px
+                width: 100%
                 height: 500px
     .about-intro
         padding: 3rem
+        display: flex
+        flex-flow: column
+        justify-content: space-around
+        .about-skill
+            display: grid
+            grid-template-columns: repeat(5, 20%)
+            list-style-type: none
+            text-align: center
+            margin: 0
+            padding: 0
+            li
+                display: flex
+                flex-flow: column
+                i
+                    margin: auto
+                    font-size: 3rem
+                .fa-html5
+                    color: #E55126
+                .fa-css3-alt
+                    color: #0C73B8
+                .fa-js-square
+                    color: #E5A229
+                .fa-bootstrap
+                    color: #553D7C
+                .fa-sass
+                    color: #CE6799
 
 
 .portfolio-page
@@ -230,24 +262,25 @@ nav
             margin: 0 auto
             background-color: $color_blue_background
             border-radius: 50px
-            height: 35px
+            height: 50px
             align-items: center
         li
             margin: 0 .7rem
             width: 5rem
             text-align: center
             cursor: pointer
+            font-weight: 600
     ul.protfolio-list
         list-style-type: none
         display: grid
         padding: 4rem
-        grid-gap: 10px
-        min-height: 100vh
+        grid-gap: 15px
+        min-height: 1000px
         max-width: 1000px
         // border: 1px solid #000
         justify-items: center
         grid-template-columns: repeat(auto-fit, minmax(30%, 1fr))
-        grid-template-rows: repeat(auto-fit, minmax(25%, 1fr))
+        grid-template-rows: repeat(auto-fit, minmax(calc(25% - 45px), 1fr))
         grid-template-areas: "grid_1 big big" "grid_2 big big" "grid_3 grid_4 grid_5" "grid_6 grid_7 grid_8"
         li
             width: 100%
@@ -307,6 +340,6 @@ nav
                 left: 0
                 display: block
         form
-            width: 60%
             background-color: white
+            max-width: 600px 
 
