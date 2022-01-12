@@ -1,18 +1,21 @@
 let nav = document.querySelector("nav");
 
 let navAnchor = document.querySelectorAll("nav ul li a");
-
+let logo = document.querySelector(".logo");
 window.addEventListener("scroll", () => {
     if (window.pageYOffset != 0) {
         nav.style.backgroundColor = "rgba(0, 0, 0, .3)";
         nav.style.color = "white";
+        logo.style.color = "#0a5374";
         navAnchor.forEach( a => {
             a.style.color = "white";
         });
     } else {
         nav.style = "";
+        logo.style.color = "#149ddd";
         navAnchor.forEach( a => {
             a.style.color = "#09777d";
+            
         });
     }
 })

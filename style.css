@@ -110,7 +110,8 @@ nav .menu li a:hover {
 @media (max-width: 800px) {
   .nav-flex {
     display: block;
-    position: relative;
+    position: -webkit-sticky;
+    position: sticky;
   }
   .nav-flex div {
     display: -webkit-box;
@@ -139,6 +140,12 @@ nav .menu li a:hover {
   .nav-flex .menu.responsive li {
     display: block;
     margin: .5rem auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-flex div .logo {
+    font-size: 1.2rem;
   }
 }
 
@@ -266,8 +273,11 @@ nav .menu li a:hover {
     margin: 1rem;
     font-size: 2rem;
   }
+  .home .intro .img {
+    margin: 2rem 0;
+  }
   .home .intro .img img {
-    width: 300px;
+    width: 290px;
   }
 }
 
@@ -425,8 +435,11 @@ nav .menu li a:hover {
     gap: 3rem;
     padding: .5rem;
   }
+  .about-page .about-intro h4 {
+    font-size: 1.3rem;
+  }
   .about-page .about-intro .about-skill li {
-    font-size: .2rem;
+    font-size: .5rem;
   }
   .about-page .about-intro .about-skill li i {
     font-size: 2rem;
@@ -497,14 +510,15 @@ nav .menu li a:hover {
   display: grid;
   padding: 4rem;
   grid-gap: 15px;
-  min-height: 1000px;
-  max-width: 1000px;
+  max-width: 1100px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   justify-items: center;
-  -ms-grid-columns: (minmax(30%, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
-  -ms-grid-rows: (minmax(calc(25% - 45px), 1fr))[auto-fit];
-      grid-template-rows: repeat(auto-fit, minmax(calc(25% - 45px), 1fr));
-      grid-template-areas: "grid_1 big big" "grid_2 big big" "grid_3 grid_4 grid_5" "grid_6 grid_7 grid_8";
+  -ms-grid-columns: (minmax(300px, 30%))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 30%));
+  -ms-grid-rows: (300px)[auto-fit];
+      grid-template-rows: repeat(auto-fit, 300px);
 }
 
 .portfolio-page ul.protfolio-list li {
@@ -512,6 +526,8 @@ nav .menu li a:hover {
   height: 100%;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 4px;
+  overflow: hidden;
+  display: block;
 }
 
 .portfolio-page ul.protfolio-list li:hover a {
@@ -530,54 +546,6 @@ nav .menu li a:hover {
 }
 
 .portfolio-page ul.protfolio-list .grid_1 {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: grid_1;
-}
-
-.portfolio-page ul.protfolio-list .grid_2 {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: grid_2;
-}
-
-.portfolio-page ul.protfolio-list .grid_3 {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  grid-area: grid_3;
-}
-
-.portfolio-page ul.protfolio-list .grid_4 {
-  -ms-grid-row: 3;
-  -ms-grid-column: 2;
-  grid-area: grid_4;
-}
-
-.portfolio-page ul.protfolio-list .grid_5 {
-  -ms-grid-row: 3;
-  -ms-grid-column: 3;
-  grid-area: grid_5;
-}
-
-.portfolio-page ul.protfolio-list .grid_6 {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  grid-area: grid_6;
-}
-
-.portfolio-page ul.protfolio-list .grid_7 {
-  -ms-grid-row: 4;
-  -ms-grid-column: 2;
-  grid-area: grid_7;
-}
-
-.portfolio-page ul.protfolio-list .grid_8 {
-  -ms-grid-row: 4;
-  -ms-grid-column: 3;
-  grid-area: grid_8;
-}
-
-.portfolio-page ul.protfolio-list .grid_1 {
   background: url("./img/guess.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -592,14 +560,16 @@ nav .menu li a:hover {
 }
 
 .portfolio-page ul.protfolio-list .b {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 2;
-  grid-area: big;
   background: url("./img/vote.png");
   background-size: 100%;
   background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media (max-width: 600px) {
+  .portfolio-page .list-menu ul.protfolio-list-menu li {
+    width: 4rem;
+  }
 }
 
 .portfolio-contact {
