@@ -5,11 +5,9 @@ $color_blue_background: #f5f8fd
 *
     box-sizing: border-box
     // border: 1px solid #000
-    
 html, body
     padding: 0
     margin: 0
-    height: 100%
 
 body
     // background-color: #f5f8fd
@@ -130,14 +128,16 @@ nav
                     i
                         margin: 1rem
                         font-size: 1.7rem
-        .img    
+        .img  
             display: flex
             justify-content: center
             align-items: center
-            
+            margin: 2rem
+
             img
                 border: 10px solid rgba(0, 0, 0, .3)
                 border-radius: 50%
+                width: 350px
 @media (max-width: 1300px)
     .home
         margin: 0
@@ -174,6 +174,9 @@ nav
                         i
                             margin: 1rem
                             font-size: 2rem
+            .img
+                img
+                    width: 300px
 
 .about-page
     background-color: $color_blue_background
@@ -231,6 +234,62 @@ nav
                 .fa-sass
                     color: #CE6799
 
+@media (max-width: 1200px)
+    .about-page
+        .about-title
+            h1
+        .about-content
+            .svg
+                svg
+                    width: 100%
+                    height: 500px
+        .about-intro
+            .about-skill
+                li
+                    font-size: .8rem
+                    i
+                        font-size: 2rem
+
+@media (max-width: 1000px)
+    .about-page
+        .about-title
+            h1
+        .about-content
+            flex-flow: column
+            gap: 4rem
+            padding: .8rem
+            .svg
+                svg
+                    width: 100%
+                    height: 200px
+        .about-intro
+            gap: 3rem
+            padding: 1rem
+            .about-skill
+                li
+                    font-size: .8rem
+                    i
+                        font-size: 2rem
+
+@media (max-width: 600px)
+    .about-page
+        .about-title
+            h1
+        .about-content
+            flex-flow: column
+            gap: 4rem
+            .svg
+                svg
+                    width: 100%
+                    height: 200px
+        .about-intro
+            gap: 3rem
+            padding: .5rem
+            .about-skill
+                li
+                    font-size: .2rem
+                    i
+                        font-size: 2rem
 
 .portfolio-page
     .intro
