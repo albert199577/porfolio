@@ -63,6 +63,7 @@ nav {
   background-color: white;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
+  z-index: 1;
 }
 
 nav div .logo {
@@ -70,6 +71,10 @@ nav div .logo {
   font-weight: 900;
   font-size: 1.5rem;
   color: #149ddd;
+}
+
+nav div .logo a {
+  text-decoration: none;
 }
 
 nav div .icon {
@@ -99,12 +104,11 @@ nav .menu li a {
   text-decoration: none;
   font-weight: bold;
   display: inline-block;
-  height: 1.8rem;
+  height: 2rem;
 }
 
 nav .menu li a:hover {
-  color: #a2b7f0;
-  border-bottom: solid 1px #a2b7f0;
+  border-bottom: solid 2px #b0c7df;
 }
 
 @media (max-width: 800px) {
@@ -236,6 +240,18 @@ nav .menu li a:hover {
     -webkit-box-direction: reverse;
         -ms-flex-flow: wrap column-reverse;
             flex-flow: wrap column-reverse;
+  }
+}
+
+@media (max-width: 800px) {
+  .home .intro .intro_myself {
+    margin: 1rem;
+  }
+  .home .intro .intro_myself h1 {
+    font-size: 4rem;
+  }
+  .home .intro .intro_myself h4 {
+    font-size: 2rem;
   }
 }
 
@@ -526,11 +542,44 @@ nav .menu li a:hover {
   border-radius: 4px;
   overflow: hidden;
   display: block;
+  position: relative;
 }
 
-.portfolio-page ul.protfolio-list li:hover a {
-  -webkit-transform: scale(1.03);
-          transform: scale(1.03);
+.portfolio-page ul.protfolio-list li .cover {
+  height: 298px;
+  width: 298px;
+  background-color: #b0c7df;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  color: white;
+}
+
+.portfolio-page ul.protfolio-list li .cover .cover-flex {
+  height: 50%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.portfolio-page ul.protfolio-list li .cover .cover-flex a {
+  font-size: 2rem;
+  display: inline-block;
+  margin: 1rem;
+  color: white;
+}
+
+.portfolio-page ul.protfolio-list li .cover h5 {
+  text-align: center;
 }
 
 .portfolio-page ul.protfolio-list li a {
@@ -539,8 +588,16 @@ nav .menu li a:hover {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+}
+
+.portfolio-page ul.protfolio-list li:hover {
+  border: none;
+}
+
+.portfolio-page ul.protfolio-list li:hover .cover {
+  opacity: .95;
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
 }
 
 .portfolio-page ul.protfolio-list .grid_1 {
@@ -570,22 +627,26 @@ nav .menu li a:hover {
   }
 }
 
-.portfolio-contact {
+.btn-color {
+  color: #149ddd;
+}
+
+.contact-page {
   background-color: #f5f8fd;
 }
 
-.portfolio-contact main {
+.contact-page main {
   padding: 2rem;
 }
 
-.portfolio-contact main h1 {
+.contact-page main h1 {
   color: #173b6c;
   position: relative;
   padding: 5px 0;
   margin: 3rem;
 }
 
-.portfolio-contact main h1:after {
+.contact-page main h1:after {
   content: "";
   position: absolute;
   width: 50px;
@@ -596,7 +657,7 @@ nav .menu li a:hover {
   display: block;
 }
 
-.portfolio-contact main form {
+.contact-page main form {
   background-color: white;
   max-width: 600px;
 }

@@ -1,7 +1,7 @@
 let nav = document.querySelector("nav");
-
 let navAnchor = document.querySelectorAll("nav ul li a");
 let logo = document.querySelector(".logo");
+
 window.addEventListener("scroll", () => {
     if (window.pageYOffset != 0) {
         nav.style.backgroundColor = "rgba(0, 0, 0, .3)";
@@ -14,8 +14,7 @@ window.addEventListener("scroll", () => {
         nav.style = "";
         logo.style.color = "#149ddd";
         navAnchor.forEach( a => {
-            a.style.color = "#09777d";
-            
+            a.style = "";
         });
     }
 })
@@ -25,13 +24,14 @@ let optionBtn = document.querySelectorAll("ul.protfolio-list-menu li");
 optionBtn.forEach(e => {
     e.addEventListener("click", () => {
         clear_color();
-        e.style.color = "#149ddd";
+        e.classList.toggle("btn-color");
+
     })
 });
 
 function clear_color() {
     optionBtn.forEach(e => {
-        e.style.color = "black";
+        e.classList.remove("btn-color");
     });
 } 
 
