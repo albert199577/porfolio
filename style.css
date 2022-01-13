@@ -515,14 +515,12 @@ nav .menu li a:hover {
       -ms-flex-pack: center;
           justify-content: center;
   justify-items: center;
-  -ms-grid-columns: (minmax(300px, 30%))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(300px, 30%));
-  -ms-grid-rows: (300px)[auto-fit];
-      grid-template-rows: repeat(auto-fit, 300px);
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .portfolio-page ul.protfolio-list li {
-  width: 100%;
+  width: 300px;
   height: 300px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 4px;
@@ -617,6 +615,7 @@ nav .menu li a:hover {
 
 .footer p {
   margin: 0;
+  font-weight: 600;
 }
 
 .footer ul {
