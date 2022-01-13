@@ -618,6 +618,15 @@ nav .menu li a:hover {
   font-weight: 600;
 }
 
+.footer p a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.footer p a:hover {
+  color: #93e7d1;
+}
+
 .footer ul {
   margin: 0;
   padding: 0;
