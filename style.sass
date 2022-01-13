@@ -1,5 +1,6 @@
 $color_title: #173b6c
 $color_blue_background: #f5f8fd
+$color_icon_hover: #93e7d1
 
     
 *
@@ -351,7 +352,7 @@ nav
         // grid-template-areas: "grid_1 big big" "grid_2 big big" "grid_3 grid_4 grid_5" "grid_6 grid_7 grid_8
         li
             width: 100%
-            height: 100%
+            height: 300px
             border: 1px solid rgba(0, 0, 0, .3)
             border-radius: 4px
             overflow: hidden
@@ -418,3 +419,28 @@ nav
             max-width: 600px 
             
 
+.footer 
+    display: flex
+    justify-content: space-around
+    align-items: center
+    height: 120px
+    p
+        margin: 0
+    ul 
+        margin: 0
+        padding: 0
+        list-style-type: none
+        display: flex
+        li
+            i
+                color: rgba(0, 0, 0, .5)
+                margin: 1rem
+                font-size: 1rem
+                &:hover
+                    color: $color_icon_hover
+
+@media (max-width: 600px)
+    .footer 
+        flex-flow: column
+        p
+            margin: 1rem
