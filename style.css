@@ -111,6 +111,10 @@ nav .menu li a:hover {
   border-bottom: solid 2px #b0c7df;
 }
 
+.nav-scroll-underline {
+  border-bottom: solid 2px #b0c7df;
+}
+
 @media (max-width: 800px) {
   .nav-flex {
     display: block;
