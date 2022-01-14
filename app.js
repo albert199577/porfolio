@@ -29,7 +29,7 @@ window.addEventListener("scroll", () => {
 window.addEventListener("scroll", () => {
     let windowY = window.pageYOffset;
     clear_underline();
-    if (windowY >= 2604) {
+    if (windowY >= 2300) {
         navTag[3].classList.add("nav-scroll-underline");
     } else if (windowY >= portfolio.offsetTop) {
         navTag[2].classList.add("nav-scroll-underline");
