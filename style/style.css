@@ -466,6 +466,96 @@ nav .menu li a:hover {
   }
 }
 
+.experience-page {
+  min-height: 100vh;
+}
+
+.experience-page .experience-title {
+  padding: 3rem;
+}
+
+.experience-page .experience-title h1 {
+  color: #173b6c;
+  position: relative;
+  padding: 5px 0;
+  margin: 3rem;
+}
+
+.experience-page .experience-title h1:after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background-color: #149ddd;
+  bottom: 0;
+  left: 0;
+  display: block;
+}
+
+.experience-page .experience-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
+  height: 60vh;
+}
+
+.experience-page .experience-content .education, .experience-page .experience-content .work-experience {
+  min-width: 300px;
+  width: 45%;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 1px 5px 10px 1px;
+          box-shadow: rgba(0, 0, 0, 0.1) 1px 5px 10px 1px;
+}
+
+@media (max-width: 1000px) {
+  .experience-page .experience-content .education, .experience-page .experience-content .work-experience {
+    width: 100%;
+  }
+}
+
+.experience-page .experience-content .education ul, .experience-page .experience-content .work-experience ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 1rem;
+}
+
+.experience-page .experience-content .education ul li, .experience-page .experience-content .work-experience ul li {
+  margin: 1rem;
+}
+
+.experience-page .experience-content .education ul li h3, .experience-page .experience-content .work-experience ul li h3 {
+  color: #173b6c;
+  position: relative;
+  display: inline-block;
+  font-weight: 1000;
+}
+
+.experience-page .experience-content .education ul li p, .experience-page .experience-content .work-experience ul li p {
+  font-weight: 700;
+  color: #3e64ff;
+  font-size: 1.2rem;
+}
+
+.experience-page .experience-content .education ul li h5, .experience-page .experience-content .work-experience ul li h5 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.experience-page .experience-content .education ul li h4, .experience-page .experience-content .work-experience ul li h4 {
+  font-size: 1rem;
+  margin: 1rem auto;
+}
+
+.portfolio-page {
+  background-color: #f5f8fd;
+}
+
 .portfolio-page .intro {
   padding: 3rem;
 }
@@ -635,10 +725,6 @@ nav .menu li a:hover {
   color: #149ddd;
 }
 
-.contact-page {
-  background-color: #f5f8fd;
-}
-
 .contact-page main {
   padding: 2rem;
 }
@@ -667,6 +753,8 @@ nav .menu li a:hover {
 }
 
 .footer {
+  background-color: #f5f8fd;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
