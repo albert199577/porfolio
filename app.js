@@ -1,5 +1,5 @@
-let nav = document.querySelector("nav");
 let navAnchor = document.querySelectorAll("nav ul li a");
+let nav = document.querySelector("nav");
 let logo = document.querySelector(".logo");
 const home = document.querySelector("#home");
 const about = document.querySelector("#about");
@@ -70,4 +70,39 @@ let btn = document.querySelector(".icon");
 btn.addEventListener("click", () => {
     nav_list.classList.toggle("responsive");
 })
+
+// api 
+
+// fetch('./api/test.php',{
+//     headers: {
+//         "Content-Type": "application/json"
+//     } })
+// .then(function (response) {
+//     // console.log(response)
+//     return response.json();
+// })
+// .then(function (data) {
+//     console.log(data);
+//     $("span.logo").html(data[0].name);
+// });
+
+async function getName (table, position) {
+    let data = await fetch("./api/test.php");
+    let parseData = await data.json();
+    console.log(parseData);
+    let { name } =  parseData[0];
+    $("span.logo").html(name);
+}
+
+
+getName();
+
+// async function manage (table, position) {
+//     let data = await fetch("./api/manage.php");
+//     let parseData = await data.json();
+//     console.log(parseData);
+//     let { name } =  parseData[0];
+//     $("span.logo").html(name);
+// }
+
 
