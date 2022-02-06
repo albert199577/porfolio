@@ -36,7 +36,7 @@ include_once "./db.php";
         </ul>
     </nav>
     <!-- login -->
-    <section class="login-page" style="height: calc(100vh - 64px);display: flex;">
+    <section class="login-page">
         <main class="container">
             <h1>Login</h1>
             <form action="./api/check_login.php" method="POST" class="form border border-info p-4 mx-auto my-5 w-md-50">
@@ -81,6 +81,13 @@ include_once "./db.php";
     
     function personalEdit() {
         $.get("./backend/edit_personal.php", {}, (manages) => {
+            $(".contain").html(manages);
+        })
+    }
+
+    function ExperienceEdit() {
+        console.log("ee")
+        $.get("./backend/edit_experience.php", {}, (manages) => {
             $(".contain").html(manages);
         })
     }
