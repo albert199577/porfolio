@@ -1,8 +1,7 @@
 <?php
-
+session_start();
 date_default_timezone_set("Asia/Taipei");
 
-session_start();
 
 class DB {
     protected $dsn = "mysql:host=127.0.0.1;charset=utf8;dbname=portfolio";
@@ -79,10 +78,8 @@ class DB {
             //update 
             foreach ($array as $key => $value) {
                 $tmp[] = "`$key` = '$value'";
-                $set = implode(" ,", $tmp);
             }
             $sql = "UPDATE $this->table SET " . implode(" ,", $tmp) . " WHERE `id` = '{$array['id']}'";
-            echo $sql;
         } else {
             //insert
             $a = array_keys($array);
@@ -94,7 +91,6 @@ class DB {
                 $v[] = "'$value'";
             }
             $sql = "INSERT INTO $this->table (" . implode(" ,", $k) .") VALUES(" . implode(" ,", $v) . ")";
-            echo $sql;
         }
         return $this->pdo->exec($sql);
     }
@@ -143,6 +139,8 @@ function to($url) {
 $About = new DB('about');
 $Exp = new DB('experience');
 $Account = new DB('account');
+$Por = new DB('portfolio');
+$Contact = new DB('contact');
 
 
 ?>

@@ -22,7 +22,7 @@
     <!-- nav -->
     <nav class="nav-flex">
         <div>
-            <span class="logo"><a href="#">Albert's BlOG</a><span>
+            <span class="logo"><a href="#">Albert's BlOG</a></span>
             <a class="icon"><i class="fa fa-bars"></i></a>
         </div>
         <ul class="menu">
@@ -122,13 +122,14 @@
                 </svg>
             </section>
             <section class="about-intro">
-                <h4><?= $About -> find(1)['intro']?></h4>
+                <h4><?=$About -> find(1)['intro']?></h4>
                 <ul class="about-skill">
                     <li><i class="fab fa-html5" aria-hidden="true"></i>HTML</li>
                     <li><i class="fab fa-css3-alt" aria-hidden="true"></i>CSS</li>
                     <li><i class="fab fa-js-square" aria-hidden="true"></i>JAVASCRIPT</li>
                     <li><i class="fab fa-bootstrap" aria-hidden="true"></i>BOOSTRAP</li>
                     <li><i class="fab fa-sass" aria-hidden="true"></i>SASS</li>
+                    <li><i class="fab fa-php" aria-hidden="true"></i>PHP</li>
                 </ul>
             </section>
         </section>
@@ -190,13 +191,13 @@
             <!-- <p>Freelance Creative & Professional Graphics Designer</p> -->
         </section>
         <section class="container list-menu">
-            <ul class="protfolio-list-menu">
+            <ul class="portfolio-list-menu">
                 <li class="btn-color">ALL</li>
                 <li>WEB</li>
                 <li>DESIGN</li>
             </ul>
         </section>
-        <ul class="container protfolio-list">
+        <ul class="container portfolio-list">
             <li class="grid_1">
                 <a href="./"></a>
                 <div class="cover">
@@ -239,29 +240,29 @@
     <section class="contact-page" id="contact">
         <main class="container">
             <h1>Contact</h1>
-            <form action="" method="POST" class="form border border-info p-4 mx-auto my-5 w-md-50 w-xl-75">
+            <!-- <form action="javascript:void(0)" class="form border border-info p-4 mx-auto my-5 w-md-50 w-xl-75"> -->
                 <div class="row my-3">
                     <div class="col-12 col-md-6">
                         <label for="">Your name</label>
-                        <input type="text" class="form-control" name="name">
+                        <input type="text" class="form-control" name="name" id="name">
                     </div>
                     <div class="col-12 col-md-6">
                         <label for="">Your mail</label>
-                        <input type="text" class="form-control" name="mail">
+                        <input type="text" class="form-control" name="mail" id="mail">
                     </div>
                 </div>
                 <div class="row my-3">
                     <div class="col">
-                        <label for="exampleFormControlTextarea1">subject</label>
-                        <input type="text" class="form-control" name="subject">
+                        <label for="exampleFormControlTextarea1">Subject</label>
+                        <input type="text" class="form-control" name="subject" id="subject">
                     </div>
                 </div>
                 <div class="form-group  my-3">
-                    <label for="exampleFormControlTextarea1">message</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label for="exampleFormControlTextarea1">Message</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" id="message"></textarea>
                 </div>
-                <button class="btn btn-info mx-auto">Submit</button>
-            </form>
+                <button class="btn btn-info mx-auto" onclick="saveContact()">Submit</button>
+            <!-- </form> -->
         </main>
     </section>
     <footer class="footer">

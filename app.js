@@ -29,7 +29,7 @@ window.addEventListener("scroll", () => {
 window.addEventListener("scroll", () => {
     let windowY = window.pageYOffset;
     clear_underline();
-    if (windowY >= 2300) {
+    if (windowY >= 2000) {
         navTag[3].classList.add("nav-scroll-underline");
     } else if (windowY >= portfolio.offsetTop) {
         navTag[2].classList.add("nav-scroll-underline");
@@ -95,7 +95,27 @@ async function getName (table, position) {
 }
 
 
-getName();
+
+const saveContact =  async() => {
+    let formData = {
+        name: $("#name").val(),
+        mail: $("#mail").val(),
+        subject: $("#subject").val(),
+        message: $("#exampleFormControlTextarea1").val()
+    };
+    let data = await fetch("./api/contact.php", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: new Headers({
+            "Content-type": "application/json"
+        })
+    });
+    let parseData = await data.json();
+    console.log(parseData);
+
+}
+
+// getName();
 
 // async function manage (table, position) {
 //     let data = await fetch("./api/manage.php");

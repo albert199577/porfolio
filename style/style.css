@@ -358,8 +358,11 @@ nav .menu li a:hover {
 .about-page .about-intro .about-skill {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (20%)[5];
-      grid-template-columns: repeat(5, 20%);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
   list-style-type: none;
   text-align: center;
   margin: 0;
@@ -501,9 +504,8 @@ nav .menu li a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 2rem;
+  padding: 4rem;
   gap: 2rem;
-  height: 60vh;
 }
 
 .experience-page .experience-content .education, .experience-page .experience-content .work-experience {
@@ -588,7 +590,7 @@ nav .menu li a:hover {
   display: flex;
 }
 
-.portfolio-page .list-menu ul.protfolio-list-menu {
+.portfolio-page .list-menu ul.portfolio-list-menu {
   list-style-type: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -614,7 +616,7 @@ nav .menu li a:hover {
   font-weight: 600;
 }
 
-.portfolio-page ul.protfolio-list {
+.portfolio-page ul.portfolio-list {
   list-style-type: none;
   display: -ms-grid;
   display: grid;
@@ -629,7 +631,7 @@ nav .menu li a:hover {
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.portfolio-page ul.protfolio-list li {
+.portfolio-page ul.portfolio-list li {
   width: 300px;
   height: 300px;
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -639,7 +641,7 @@ nav .menu li a:hover {
   position: relative;
 }
 
-.portfolio-page ul.protfolio-list li .cover {
+.portfolio-page ul.portfolio-list li .cover {
   height: 298px;
   width: 298px;
   background-color: #b0c7df;
@@ -651,7 +653,7 @@ nav .menu li a:hover {
   color: white;
 }
 
-.portfolio-page ul.protfolio-list li .cover .cover-flex {
+.portfolio-page ul.portfolio-list li .cover .cover-flex {
   height: 50%;
   width: 100%;
   display: -webkit-box;
@@ -665,18 +667,18 @@ nav .menu li a:hover {
           align-items: flex-end;
 }
 
-.portfolio-page ul.protfolio-list li .cover .cover-flex a {
+.portfolio-page ul.portfolio-list li .cover .cover-flex a {
   font-size: 2rem;
   display: inline-block;
   margin: 1rem;
   color: white;
 }
 
-.portfolio-page ul.protfolio-list li .cover h5 {
+.portfolio-page ul.portfolio-list li .cover h5 {
   text-align: center;
 }
 
-.portfolio-page ul.protfolio-list li a {
+.portfolio-page ul.portfolio-list li a {
   display: inline-block;
   width: 100%;
   height: 100%;
@@ -684,31 +686,31 @@ nav .menu li a:hover {
      object-fit: cover;
 }
 
-.portfolio-page ul.protfolio-list li:hover {
+.portfolio-page ul.portfolio-list li:hover {
   border: none;
 }
 
-.portfolio-page ul.protfolio-list li:hover .cover {
+.portfolio-page ul.portfolio-list li:hover .cover {
   opacity: .95;
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
 }
 
-.portfolio-page ul.protfolio-list .grid_1 {
+.portfolio-page ul.portfolio-list .grid_1 {
   background: url("../img/guess.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 110%;
 }
 
-.portfolio-page ul.protfolio-list .grid_2 {
+.portfolio-page ul.portfolio-list .grid_2 {
   background: url("../img/weather.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 110%;
 }
 
-.portfolio-page ul.protfolio-list .b {
+.portfolio-page ul.portfolio-list .b {
   background: url("../img/vote.png");
   background-size: 100%;
   background-repeat: no-repeat;

@@ -225,7 +225,9 @@ nav
         justify-content: space-around
         .about-skill
             display: grid
-            grid-template-columns: repeat(5, 20%)
+            grid-template-columns: repeat(3, 1fr)
+            grid-template-rows: repeat(2, 1fr)
+            gap: 1rem
             list-style-type: none
             text-align: center
             margin: 0
@@ -328,9 +330,8 @@ nav
         display: flex
         flex-flow: wrap
         justify-content: center
-        padding: 2rem
+        padding: 4rem
         gap: 2rem
-        height: 60vh
         .education, .work-experience
             min-width: 300px
             width: 45%
@@ -383,7 +384,7 @@ nav
             // line-height: 1.2
     .list-menu
         display: flex
-        ul.protfolio-list-menu
+        ul.portfolio-list-menu
             list-style-type: none
             display: flex
             justify-content: center
@@ -399,7 +400,7 @@ nav
             text-align: center
             cursor: pointer
             font-weight: 600
-    ul.protfolio-list
+    ul.portfolio-list
         list-style-type: none
         display: grid
         padding: 4rem
