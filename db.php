@@ -141,6 +141,7 @@ $Exp = new DB('experience');
 $Account = new DB('account');
 $Por = new DB('portfolio');
 $Contact = new DB('contact');
+$Work = new DB('work');
 
 
 ?>

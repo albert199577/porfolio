@@ -96,23 +96,24 @@ btn.addEventListener("click", () => {
 
 
 
-const saveContact =  async() => {
+const saveContact = async() => {
     let formData = {
         name: $("#name").val(),
         mail: $("#mail").val(),
         subject: $("#subject").val(),
         message: $("#exampleFormControlTextarea1").val()
     };
-    let data = await fetch("./api/contact.php", {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: new Headers({
-            "Content-type": "application/json"
-        })
-    });
-    let parseData = await data.json();
-    console.log(parseData);
-
+    try {
+        const res = await fetch("./api/contact.php", {
+            method: "POST",
+            body: formData,
+            headers: new Headers({
+                "Content-type": "application/json"
+            })
+        });
+    } catch (error) {
+        console.log(" Fetch error :, error");
+    }
 }
 
 

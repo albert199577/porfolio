@@ -58,4 +58,42 @@
 .login-page .manage .contain form {
   margin: auto;
 }
+
+.manage-page main {
+  padding: 2rem;
+}
+
+.manage-page .manage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  justify-items: center;
+  gap: 4rem;
+}
+
+.manage-page .manage ul.manage-nav {
+  border: 1px solid #beb4b4;
+  padding: 2rem 1rem;
+  margin-top: 0;
+  margin-left: 0;
+  border-radius: 3px;
+}
+
+.manage-page .manage ul.manage-nav li {
+  list-style: none;
+  margin: 1rem auto;
+}
+
+.manage-page .manage .contain {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 70%;
+          flex: 0 0 70%;
+}
+
+.manage-page .manage .contain form {
+  margin: auto;
+}
 /*# sourceMappingURL=back.css.map */

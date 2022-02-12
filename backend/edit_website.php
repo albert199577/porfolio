@@ -1,4 +1,6 @@
+<?php include_once "./db.php"; ?>
 <form action="./api/edit_website.php" method="POST">
+    <h1>WEBSITE</h1>
     <input type="text" name="id" id="id" style="display: none;" value="1">
     <p>
         <label for="name">website</label>

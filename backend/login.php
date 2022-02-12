@@ -7,7 +7,7 @@
 <section class="login-page">
     <main class="container">
         <h1>Login</h1>
-        <main class="form border border-info p-4 mx-auto my-5 w-md-50">
+        <main class="border border-info p-4 mx-auto my-5 w-md-50">
             <p id="error"></p>
             <div class="row my-3">
                 <div class="col">

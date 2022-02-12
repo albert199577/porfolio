@@ -1,4 +1,5 @@
 <?php
+include_once "./db.php";
 $user = $Account -> find(1);
 if (isset($_SESSION['user']) != $user['account']) {
     to("./backstage.php");
@@ -7,17 +8,21 @@ if (isset($_SESSION['user']) != $user['account']) {
 <section class="manage-page">
     <main class="manage">
         <ul class="manage-nav">
-            <li><a href="javascript:void(0)" onclick="personalEdit()">Personal</a></li>
-            <li><a href="javascript:void(0)" onclick="ExperienceEdit()">Experience</a></li>
-            <li><a href="javascript:void(0)" onclick="portfolioEdit()">Portfolio</a></li>
-            <li><a href="javascript:void(0)" onclick="websiteEdit()">Website</a></li>
+            <li><a href="?do=manage&edit=personal">Personal</a></li>
+            <li><a href="?do=manage&edit=experience">Experience</a></li>
+            <li><a href="?do=manage&edit=portfolio">Portfolio</a></li>
+            <li><a href="?do=manage&edit=website">Website</a></li>
         </ul>
-        <section class="contain">
-            <?php include "./backend/edit_personal.php";?>
-        </section>
-    </main>
-    <h1></h1>
-    <main class="container">
-        
+        <main class="container">
+            <?php
+                $do = $_GET['edit'] ?? "personal";
+                $file = "./backend/edit_" . $do . ".php";
+                if (file_exists($file)) {
+                    include $file;
+                } else {
+                    include "./backend/edit_personal.php";
+                }
+            ?>
+        </main>
     </main>
 </section>

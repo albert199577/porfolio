@@ -1,8 +1,4 @@
-<?php 
-include_once "./db.php";
-
-?>
-
+<?php include "./db.php";?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,30 +50,6 @@ include_once "./db.php";
 </html>
 
 <script>
-    function personalEdit() {
-        $.get("./backend/edit_personal.php", {}, (manages) => {
-            $(".contain").html(manages);
-        })
-    }
-
-    function ExperienceEdit() {
-        $.get("./backend/edit_experience.php", {}, (manages) => {
-            $(".contain").html(manages);
-        })
-    }
-
-    function portfolioEdit() {
-        $.get("./backend/edit_portfolio.php", {}, (manages) => {
-            $(".contain").html(manages);
-        })
-    }
-
-    function websiteEdit() {
-        $.get("./backend/edit_website.php", {}, (manages) => {
-            $(".contain").html(manages);
-        })
-    }
-
     const checkLogin = async() => {
         let formData = {
             account: $("#account").val(),

@@ -1,25 +1,111 @@
-<?php include_once "../db.php";?>
-<form action="./api/edit_experience.php" method="POST">
-    Experience
-    <input type="text" name="id" id="id" style="display: none;" value="1">
-    <?php 
-    $rows = $Exp -> all();
-    foreach ($rows as $key => $value) {
-    ?>
-    <p>
-        <label for="name">Title</label>
-        <input type="text" name="name" id="name" value="<?=$value["title"];?>">
-    </p>
-    <p>
-        <label for="title">Date</label>
-        <input type="text" name="title" id="title" value="<?=$value["date"];?>">
-    </p>
-    <p>
-        <label for="intro">Intro</label>
-        <textarea name="intro" id="intro" cols="30" rows="10"><?=$value["department"];?></textarea>
-    </p>
-    <?php
-    }
-    ?>
-    <button>edit</button>
-</form>
+<?php include_once "./db.php"; ?>
+<section class="exp-page">
+    <h1>Experience</h1>
+    <div class="container border border-info p-4 mx-auto my-5">
+        <section class="education">
+            <h4>education</h4>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Intro</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php 
+                $rows = $Exp -> all();
+                foreach ($rows as $key => $value) {
+                    $i = 1;
+                ?>
+                    <input type="hidden" name="id" id="id" value="<?=$value["id"];?>">
+                    <tr>
+                        <th scope="row"><?=$i;?></th>
+                        <td><input type="text" class="form-control" name="title" id="title" value="<?=$value["title"];?>"></td>
+                        <td><input type="text" class="form-control" name="date" id="date" value="<?=$value["date"];?>"></td>
+                        <td><textarea type="text" class="form-control" name="department" id="department" cols="30" rows="1" ><?=$value["department"];?></textarea></td>
+                        <td><button class="btn btn-info" onclick="edu()">Edit</button></td>
+                    </tr>
+                <?php
+                    $i++;
+                }
+                ?>
+                </tbody>
+            </table>
+        </section>
+        
+        <section class="work-experience">
+            <h4>work-experience</h4>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Intro</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php 
+                $rows = $Work -> all();
+                foreach ($rows as $key => $value) {
+                    $i = 1;
+                ?>
+                    <input type="hidden" name="id" id="id2" value="<?=$value["id"];?>">
+                    <tr>
+                        <th scope="row"><?=$i;?></th>
+                        <td><input type="text" class="form-control" name="title2" id="title2" value="<?=$value["title"];?>"></td>
+                        <td><input type="text" class="form-control" name="date2" id="date2" value="<?=$value["date"];?>"></td>
+                        <td><textarea type="text" class="form-control" name="department2" id="department2" cols="30" rows="1" ><?=$value["department"];?></textarea></td>
+                        <td><button class="btn btn-info" onclick="work()">Edit</button></td>
+                    </tr>
+                <?php
+                    $i++;
+                }
+                ?>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</section>
+
+<script>
+    const edu = async() => {
+		let formData = {
+			title: $("#title").val(),
+			date: $("#date").val(),
+			department: $("#department").val(),
+			id : $("#id").val()
+		};
+		let data = await fetch("./api/edit_experience.php", {
+			method: "POST",
+			body: JSON.stringify(formData),
+			headers: new Headers({
+				"Content-type": "application/json"
+			})
+		});
+		let parseData = await data.json();
+		console.log(parseData);
+	}
+
+    const work = async() => {
+		let formData = {
+			title: $("#title2").val(),
+			date: $("#date2").val(),
+			department: $("#department2").val(),
+			id : $("#id2").val()
+		};
+		let data = await fetch("./api/edit_experience_work.php", {
+			method: "POST",
+			body: JSON.stringify(formData),
+			headers: new Headers({
+				"Content-type": "application/json"
+			})
+		});
+		let parseData = await data.json();
+		console.log(parseData);
+	}
+</script>

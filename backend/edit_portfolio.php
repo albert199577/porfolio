@@ -1,4 +1,6 @@
+<?php include_once "./db.php"; ?>
 <form action="./api/edit_portfolio.php" method="POST">
+    <h1>portfolio</h1>
     <input type="text" name="id" id="id" style="display: none;" value="1">
     <p>
         <label for="name">Portfolio</label>
