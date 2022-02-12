@@ -266,7 +266,7 @@
         </main>
     </section>
     <footer class="footer">
-        <p>All right reserved <a href="./login.php">Albert Kao</a> @ 2022</p>
+        <p>All right reserved <a href="./backstage.php">Albert Kao</a> @ 2022</p>
         <ul>
             <li><a href="mailto:mso729049@gmail.com"><i class="far fa-envelope"></i></a></li>
             <li><a href="https://github.com/albert199577"><i class="fab fa-github"></i></a></li>

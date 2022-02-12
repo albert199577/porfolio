@@ -1,11 +1,9 @@
 <?php include_once "../db.php";?>
-
 <form action="./api/edit_experience.php" method="POST">
     Experience
     <input type="text" name="id" id="id" style="display: none;" value="1">
     <?php 
     $rows = $Exp -> all();
-    dd($rows);
     foreach ($rows as $key => $value) {
     ?>
     <p>

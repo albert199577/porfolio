@@ -1,19 +1,22 @@
 <?php include_once "../db.php";
 
-//frontend check login  
-if(isset($_SESSION['error'])) {
-    unset($_SESSION['error']);
-}
+$_POST = json_decode(file_get_contents('php://input'), true);
+
+
+//frontend check login
+// if(isset($_SESSION['error'])) {
+//     unset($_SESSION['error']);
+// }
 
 // checkLogin($_POST);
 
 
-
-if ($Account->checkLogin($_POST)) {
+if ($Account -> checkLogin($_POST)) {
     $_SESSION['user'] = $_POST['account'];
+    echo "1";
 } else {
-    $_SESSION['error'] = "帳號密碼錯誤, 請重新輸入";
+    echo "0";
 }
 
-to("../login.php");
+
 

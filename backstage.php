@@ -14,6 +14,7 @@ include_once "./db.php";
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="./style/style.css" type="text/css">
+    <link rel="stylesheet" href="./style/back.css" type="text/css">
 </head>
 <body>
     <!-- nav -->
@@ -25,7 +26,7 @@ include_once "./db.php";
         <ul class="menu">
             <li><a href="">Home</a></li>
             <li><a href="./index.php">FrontStage</a></li>
-            <li><a href="javascript:void(0)" onclick="mangePage()" disabled>Manage</a></li>
+            <li><a href="./backstage.php?do=manage">Manage</a></li>
             <?php
             if (isset($_SESSION['user'])) {
             ?>
@@ -35,34 +36,15 @@ include_once "./db.php";
             ?>
         </ul>
     </nav>
-    <!-- login -->
-    <section class="login-page">
-        <main class="container">
-            <h1>Login</h1>
-            <form action="./api/check_login.php" method="POST" class="form border border-info p-4 mx-auto my-5 w-md-50">
-                <?php
-                if (isset($_SESSION['error'])) {
-                ?>
-                <p><?=$_SESSION['error'];?></p>
-                <?php
-                }
-                ?>
-                <div class="row my-3">
-                    <div class="col">
-                        <label for="">Account</label>
-                        <input type="text" class="form-control" name="account">
-                    </div>
-                </div>
-                <div class="row my-3">
-                    <div class="col">
-                        <label for="exampleFormControlTextarea1">Password</label>
-                        <input type="text" class="form-control" name="password">
-                    </div>
-                </div>
-                <button class="btn btn-info mx-auto">Log In</button>
-            </form>
-        </main>
-    </section>
+    <?php
+        $do = $_GET['do'] ?? "login";
+        $file = "./backend/" . $do . ".php";
+        if (file_exists($file)) {
+            include $file;
+        } else {
+            include "./backend/login.php";
+        }
+    ?>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
@@ -72,13 +54,6 @@ include_once "./db.php";
 </html>
 
 <script>
-    mangePage();
-    function mangePage() {
-        $.get("./api/manage.php", {}, (manages) => {
-            $(".login-page").html(manages);
-        })
-    }
-    
     function personalEdit() {
         $.get("./backend/edit_personal.php", {}, (manages) => {
             $(".contain").html(manages);
@@ -86,7 +61,6 @@ include_once "./db.php";
     }
 
     function ExperienceEdit() {
-        console.log("ee")
         $.get("./backend/edit_experience.php", {}, (manages) => {
             $(".contain").html(manages);
         })
@@ -104,5 +78,24 @@ include_once "./db.php";
         })
     }
 
-
+    const checkLogin = async() => {
+        let formData = {
+            account: $("#account").val(),
+            password: $("#password").val(),
+        };
+        let data = await fetch("./api/check_login.php", {
+            method: "POST",
+            body: JSON.stringify(formData),
+            headers: new Headers({
+                "Content-type": "application/json"
+            })
+        });
+        let parseData = await data.json();
+        console.log(parseData);
+        if (parseData) {
+            location.href = "backstage.php?do=manage";
+        } else {
+            $("#error").text("帳號密碼錯誤, 請重新輸入");
+        }
+    }
 </script>

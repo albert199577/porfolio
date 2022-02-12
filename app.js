@@ -47,7 +47,7 @@ function clear_underline() {
 }
 
 //option list switch
-let optionBtn = document.querySelectorAll("ul.protfolio-list-menu li");
+let optionBtn = document.querySelectorAll("ul.portfolio-list-menu li");
 
 optionBtn.forEach(e => {
     e.addEventListener("click", () => {
@@ -86,13 +86,13 @@ btn.addEventListener("click", () => {
 //     $("span.logo").html(data[0].name);
 // });
 
-async function getName (table, position) {
-    let data = await fetch("./api/test.php");
-    let parseData = await data.json();
-    console.log(parseData);
-    let { name } =  parseData[0];
-    $("span.logo").html(name);
-}
+// async function getName (table, position) {
+//     let data = await fetch("./api/test.php");
+//     let parseData = await data.json();
+//     console.log(parseData);
+//     let { name } =  parseData[0];
+//     $("span.logo").html(name);
+// }
 
 
 
@@ -114,6 +114,8 @@ const saveContact =  async() => {
     console.log(parseData);
 
 }
+
+
 
 // getName();
 

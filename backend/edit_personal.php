@@ -1,5 +1,3 @@
-<?php include_once "../db.php";?>
-
 <form action="./api/edit_personal.php" method="POST">
     <input type="text" name="id" id="id" style="display: none;" value="1">
     <p>

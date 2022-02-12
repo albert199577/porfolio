@@ -1,0 +1,44 @@
+$color_title: #173b6c
+$color_blue_background: #f5f8fd
+$color_icon_hover: #93e7d1
+$color_gray: #b0c7df
+
+// login 
+.login-page
+    main
+        padding: 2rem
+        h1
+            color: $color_title
+            position: relative
+            padding: 5px 0
+            margin: 3rem
+            &:after
+                content: ""
+                position: absolute
+                width: 50px
+                height: 3px
+                background-color: #149ddd
+                bottom: 0
+                left: 0
+                display: block
+        main
+            background-color: white
+            max-width: 600px
+    .manage
+        display: flex
+        justify-content: space-between
+        justify-items: center
+        gap: 4rem
+        ul.manage-nav
+            border: 1px solid #beb4b4
+            padding: 2rem 1rem
+            margin-top: 0
+            margin-left: 0
+            border-radius: 3px
+            li
+                list-style: none
+                margin: 1rem auto
+        .contain
+            flex: 0 0 70%
+            form
+                margin: auto
