@@ -1,7 +1,7 @@
 <?php include_once "./db.php"; ?>
 <section class="exp-page">
-    <h1>Experience</h1>
-    <div class="container border border-info p-4 mx-auto my-5">
+    <div class="border border-info p-4 mx-auto my-5 ">
+        <h1>Experience</h1>
         <section class="education">
             <h4>education</h4>
             <table class="table table-hover">

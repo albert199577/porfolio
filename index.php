@@ -148,7 +148,7 @@
                         <h3>education</h3>
                     </li>
                     <?php
-                    $edu = $Exp -> all(["class" =>"1"]);
+                    $edu = $Exp -> all();
                     foreach ($edu as $key => $value) {
                     ?>
                     <li>
@@ -167,7 +167,7 @@
                         <h3>work-experience</h3>
                     </li>
                     <?php
-                    $workExp = $Exp -> all(["class" =>"2"]);
+                    $workExp = $Work -> all();
                     foreach ($workExp as $key => $value) {
                     ?>
                     <li>

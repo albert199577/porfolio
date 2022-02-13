@@ -139,7 +139,7 @@ function to($url) {
 $About = new DB('about');
 $Exp = new DB('experience');
 $Account = new DB('account');
-$Por = new DB('portfolio');
+$Portfolio = new DB('portfolio');
 $Contact = new DB('contact');
 $Work = new DB('work');
 
