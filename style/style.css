@@ -97,12 +97,6 @@
   margin: auto;
 }
 
-.exp-page .container section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -742,13 +736,32 @@ nav .menu li a:hover {
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   overflow: hidden;
-  display: block;
   position: relative;
 }
 
+.portfolio-page ul.portfolio-list li:hover img {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.portfolio-page ul.portfolio-list li:hover .cover {
+  opacity: .95;
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+}
+
+.portfolio-page ul.portfolio-list li img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
 .portfolio-page ul.portfolio-list li .cover {
-  height: 298px;
-  width: 298px;
+  height: 300px;
+  width: 300px;
   background-color: #b0c7df;
   position: absolute;
   opacity: 0;
@@ -789,37 +802,6 @@ nav .menu li a:hover {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.portfolio-page ul.portfolio-list li:hover {
-  border: none;
-}
-
-.portfolio-page ul.portfolio-list li:hover .cover {
-  opacity: .95;
-  -webkit-transform: scale(1.03);
-          transform: scale(1.03);
-}
-
-.portfolio-page ul.portfolio-list .grid_1 {
-  background: url("../img/guess.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 110%;
-}
-
-.portfolio-page ul.portfolio-list .grid_2 {
-  background: url("../img/weather.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 110%;
-}
-
-.portfolio-page ul.portfolio-list .b {
-  background: url("../img/vote.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 @media (max-width: 600px) {

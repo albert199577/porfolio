@@ -197,50 +197,33 @@
                 <li>DESIGN</li>
             </ul>
         </section>
+        <?php 
+        $portfolio = $Portfolio -> all(['sh' => 1]);
+        ?>
         <ul class="container portfolio-list">
-            <li class="grid_1">
-                <a href="./"></a>
+            <?php
+            foreach ($portfolio as $key => $value) {
+            ?>
+            <li class="imageContainer">
+                <img src="./img/<?=$value['img'];?>" alt="">
                 <div class="cover">
                     <div class="cover-flex">
-                        <span><a href=""><i class="fas fa-search"></i></a></span>
-                        <span><a href=""><i class="fab fa-github"></i></a></span>
+                        <span><a href="<?=$value['url'];?>"><i class="fas fa-search"></i></a></span>
+                        <span><a href="<?=$value['github_url'];?>"><i class="fab fa-github"></i></a></span>
                     </div>
-                    <h5>Guess Game</h5>
+                    <h5><?=$value['name'];?></h5>
                 </div>
             </li>
-            <li class="b">
-                <a href="#"></a>
-                <div class="cover">
-                    <div class="cover-flex">
-                        <span><a href=""><i class="fas fa-search"></i></a></span>
-                        <span><a href=""><i class="fab fa-github"></i></a></span>
-                    </div>
-                    <h5>Vote System</h5>
-                </div>
-            </li>
-            <li class="grid_2">
-                <a href="./chapter-7-9/dist/index.html"></a>
-                <div class="cover">
-                    <div class="cover-flex">
-                        <span><a href=""><i class="fas fa-search"></i></a></span>
-                        <span><a href=""><i class="fab fa-github"></i></a></span>
-                    </div>
-                    <h5>weather</h5>
-                </div>
-            </li>
-            <!-- <li class="grid_3"></li>
-            <li class="grid_4"></li>
-            <li class="grid_5"></li>
-            <li class="grid_6"></li>
-            <li class="grid_7"></li>
-            <li class="grid_8"></li> -->
+            <?php
+            }
+            ?>
         </ul>
     </section>
     <!-- contact -->
     <section class="contact-page" id="contact">
         <main class="container">
             <h1>Contact</h1>
-            <!-- <form action="javascript:void(0)" class="form border border-info p-4 mx-auto my-5 w-md-50 w-xl-75"> -->
+            <div class=" border border-info p-4 mx-auto my-5 w-md-50 w-xl-75">
                 <div class="row my-3">
                     <div class="col-12 col-md-6">
                         <label for="">Your name</label>
@@ -262,7 +245,7 @@
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" id="message"></textarea>
                 </div>
                 <button class="btn btn-info mx-auto" onclick="saveContact()">Submit</button>
-            <!-- </form> -->
+            </div>
         </main>
     </section>
     <footer class="footer">
