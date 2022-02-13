@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022 年 02 月 03 日 08:53
--- 伺服器版本： 8.0.27
--- PHP 版本： 7.3.11
+-- 產生時間： 2022-02-13 14:31:03
+-- 伺服器版本： 10.4.21-MariaDB
+-- PHP 版本： 7.4.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `about` (
-  `id` int UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `title` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `title` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `intro` text COLLATE utf8mb4_unicode_520_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
@@ -49,15 +49,38 @@ INSERT INTO `about` (`id`, `name`, `title`, `intro`) VALUES
 
 CREATE TABLE `account` (
   `account` varchar(18) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `password` varchar(18) COLLATE utf8mb4_unicode_520_ci NOT NULL
+  `password` varchar(18) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- 傾印資料表的資料 `account`
 --
 
-INSERT INTO `account` (`account`, `password`) VALUES
-('mso729049', 'addi6463');
+INSERT INTO `account` (`account`, `password`, `id`) VALUES
+('mso729049', 'addi6463', 1);
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `name` varchar(36) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `mail` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `subject` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `message` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `sh` int(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- 傾印資料表的資料 `contact`
+--
+
+INSERT INTO `contact` (`id`, `name`, `mail`, `subject`, `message`, `sh`) VALUES
+(1, 'alberto', '645he@gmail.com', 'tykty', '', 1);
 
 -- --------------------------------------------------------
 
@@ -66,20 +89,18 @@ INSERT INTO `account` (`account`, `password`) VALUES
 --
 
 CREATE TABLE `experience` (
-  `id` int UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
   `title` varchar(36) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `date` varchar(15) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `department` varchar(64) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `class` int NOT NULL
+  `department` varchar(64) COLLATE utf8mb4_unicode_520_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- 傾印資料表的資料 `experience`
 --
 
-INSERT INTO `experience` (`id`, `title`, `date`, `department`, `class`) VALUES
-(1, 'wood and science design', '2014 - 2019', 'National Pingtung University of Science and Technology', 1),
-(2, 'Drafting engineer', '2019 - 2021', 'TAIWAN SHINRYO CO., LTD.', 2);
+INSERT INTO `experience` (`id`, `title`, `date`, `department`) VALUES
+(1, 'wood and science design', '2014 - 2019', 'National Pingtung University of Science and Technology');
 
 -- --------------------------------------------------------
 
@@ -88,12 +109,43 @@ INSERT INTO `experience` (`id`, `title`, `date`, `department`, `class`) VALUES
 --
 
 CREATE TABLE `portfolio` (
-  `id` int UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(36) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `class` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `url` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `github_url` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `img` text COLLATE utf8mb4_unicode_520_ci NOT NULL
+  `img` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `sh` int(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- 傾印資料表的資料 `portfolio`
+--
+
+INSERT INTO `portfolio` (`id`, `name`, `class`, `url`, `github_url`, `img`, `sh`) VALUES
+(2, 'Guess Game', 'website', 'http://220.128.133.15/s1100405/guess/', '111', 'guess.png', 1),
+(6, 'Weather', 'website', '', '111', 'weather.png', 1),
+(7, 'Vote System', 'design', '', '', 'vote.png', 1);
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `work`
+--
+
+CREATE TABLE `work` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(36) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `date` varchar(15) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `department` varchar(64) COLLATE utf8mb4_unicode_520_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- 傾印資料表的資料 `work`
+--
+
+INSERT INTO `work` (`id`, `title`, `date`, `department`) VALUES
+(1, 'Drafting engineer', '2019 - 2021', 'TAIWAN SHINRYO CO., LTD.');
 
 --
 -- 已傾印資料表的索引
@@ -103,6 +155,18 @@ CREATE TABLE `portfolio` (
 -- 資料表索引 `about`
 --
 ALTER TABLE `about`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `account`
+--
+ALTER TABLE `account`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `contact`
+--
+ALTER TABLE `contact`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -118,6 +182,12 @@ ALTER TABLE `portfolio`
   ADD PRIMARY KEY (`id`);
 
 --
+-- 資料表索引 `work`
+--
+ALTER TABLE `work`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
 --
 
@@ -125,19 +195,37 @@ ALTER TABLE `portfolio`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `about`
 --
 ALTER TABLE `about`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `account`
+--
+ALTER TABLE `account`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `experience`
 --
 ALTER TABLE `experience`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `portfolio`
 --
 ALTER TABLE `portfolio`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `work`
+--
+ALTER TABLE `work`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

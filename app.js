@@ -135,7 +135,7 @@ const saveContact = async() => {
     try {
         const res = await fetch("./api/contact.php", {
             method: "POST",
-            body: formData,
+            body: JSON.stringify(formData),
             headers: new Headers({
                 "Content-type": "application/json"
             })

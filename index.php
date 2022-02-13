@@ -227,22 +227,22 @@
                 <div class="row my-3">
                     <div class="col-12 col-md-6">
                         <label for="">Your name</label>
-                        <input type="text" class="form-control" name="name" id="name">
+                        <input type="text" class="form-control" name="name" id="name" required>
                     </div>
                     <div class="col-12 col-md-6">
                         <label for="">Your mail</label>
-                        <input type="text" class="form-control" name="mail" id="mail">
+                        <input type="text" class="form-control" name="mail" id="mail" required>
                     </div>
                 </div>
                 <div class="row my-3">
                     <div class="col">
                         <label for="exampleFormControlTextarea1">Subject</label>
-                        <input type="text" class="form-control" name="subject" id="subject">
+                        <input type="text" class="form-control" name="subject" id="subject" required>
                     </div>
                 </div>
                 <div class="form-group  my-3">
                     <label for="exampleFormControlTextarea1">Message</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" id="message"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" id="message" required></textarea>
                 </div>
                 <button class="btn btn-info mx-auto" onclick="saveContact()">Submit</button>
             </div>
@@ -269,7 +269,3 @@
 </body>
 </html>
 
-<script>
-
-
-</script>
