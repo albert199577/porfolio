@@ -198,13 +198,13 @@
             </ul>
         </section>
         <?php 
-        $portfolio = $Portfolio -> all(['sh' => 1]);
+            $portfolio = $Portfolio -> all(['sh' => 1]);
         ?>
         <ul class="container portfolio-list">
             <?php
             foreach ($portfolio as $key => $value) {
             ?>
-            <li class="imageContainer">
+            <li class="imageContainer <?=$value['class'];?>">
                 <img src="./img/<?=$value['img'];?>" alt="">
                 <div class="cover">
                     <div class="cover-flex">
@@ -223,7 +223,7 @@
     <section class="contact-page" id="contact">
         <main class="container">
             <h1>Contact</h1>
-            <div class=" border border-info p-4 mx-auto my-5 w-md-50 w-xl-75">
+            <div class="border border-info p-4 mx-auto my-5 w-75 w-md-100">
                 <div class="row my-3">
                     <div class="col-12 col-md-6">
                         <label for="">Your name</label>
@@ -267,5 +267,9 @@
     </script>
     <script src="app.js"></script>
 </body>
-
 </html>
+
+<script>
+
+
+</script>

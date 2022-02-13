@@ -25,6 +25,15 @@
                 </div>
                 <div class="input-group my-2">
                     <div class="input-group-prepend">
+                        <div class="input-group-text">Class:</div>
+                    </div>
+                    <select name="class" id="class">
+                        <option value="website">website</option>
+                        <option value="design">design</option>
+                    </select>
+                </div>
+                <div class="input-group my-2">
+                    <div class="input-group-prepend">
                         <div class="input-group-text">GitHub Url:</div>
                     </div>
                     <input class="input-group-prepend" type="text" name="github_url" id="github_url" value="<?=$portfolio['github_url'];?>">

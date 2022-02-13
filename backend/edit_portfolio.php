@@ -5,12 +5,13 @@
             <h3 class="text-center">作品列表</h3>
             <table class="table text-center">
                 <tr>
-                    <td>圖片</td>
-                    <td>名稱</td>
-                    <td class='col-3'>Github Url</td>
-                    <td class='col-3'>Url</td>
-                    <td>狀態</td>
-                    <td colspan="3">管理</td>
+                    <td>Picture</td>
+                    <td>Name</td>
+                    <td>Class</td>
+                    <td class='col-2'>Github Url</td>
+                    <td class='col-2'>Url</td>
+                    <td>Status</td>
+                    <td colspan="3">Manage</td>
                 </tr>
                 <?php
                 $rows = $Portfolio -> all();
@@ -22,6 +23,9 @@
                     </td>
                     <td>
                         <?=$row['name'];?>
+                    </td>
+                    <td>
+                        <?=$row['class'];?>
                     </td>
                     <td>
                         <?=$row['github_url'];?>

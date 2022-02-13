@@ -53,7 +53,6 @@ optionBtn.forEach(e => {
     e.addEventListener("click", () => {
         clear_color();
         e.classList.toggle("btn-color");
-
     })
 });
 
@@ -61,7 +60,37 @@ function clear_color() {
     optionBtn.forEach(e => {
         e.classList.remove("btn-color");
     });
-} 
+}
+
+let all = document.querySelectorAll(".imageContainer");
+let website = document.querySelectorAll(".website");
+let design = document.querySelectorAll(".design");
+
+optionBtn[0].addEventListener("click", () => {
+    all.forEach(e => {
+        e.style.display = 'block';
+    })
+})
+
+optionBtn[1].addEventListener("click", () => {
+    all.forEach(e => {
+        e.style.display = 'block';
+    })
+    design.forEach(e => {
+        e.style.display = 'none';
+    })
+})
+
+optionBtn[2].addEventListener("click", () => {
+    all.forEach(e => {
+        e.style.display = 'block';
+    })
+    website.forEach(e => {
+        e.style.display = 'none';
+    })
+})
+
+
 
 
 //nav responsive
