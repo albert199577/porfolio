@@ -2,7 +2,7 @@
 <section class="exp-page">
     <div class="container">
         <div class="mx-auto">
-            <h3 class="text-center">作品列表</h3>
+            <h3 class="text-center">Portfolio List</h3>
             <table class="table text-center">
                 <tr>
                     <td>Picture</td>
@@ -35,15 +35,15 @@
                     </td>
                     <td>
                         <a href="./api/change_status.php?id=<?=$row['id'];?>">
-                            <?=$row['sh'] == 1 ? '展示中' : '下架中';?>
+                            <?=$row['sh'] == 1 ? 'Showing' : 'Down';?>
                         </a>
                     </td>
                     <td>
                         <a href="./backstage.php?do=manage&edit=portfolio_item&id=<?=$row['id'];?>">
-                            <button class="btn btn-success">修改</button>
+                            <button class="btn btn-success">Edit</button>
                         </a>
                         <a href="./api/del_ad.php?id=<?=$row['id'];?>">
-                            <button class="btn btn-danger">刪除</button>
+                            <button class="btn btn-danger">Delete</button>
                         </a>
                     </td>
                 </tr>

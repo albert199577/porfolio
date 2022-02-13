@@ -12,6 +12,7 @@ if (isset($_SESSION['user']) != $user['account']) {
             <li><a href="?do=manage&edit=experience">Experience</a></li>
             <li><a href="?do=manage&edit=portfolio">Portfolio</a></li>
             <li><a href="?do=manage&edit=website">Website</a></li>
+            <li><a href="?do=manage&edit=contact">Contact</a></li>
         </ul>
         <main class="container">
             <?php

@@ -1,6 +1,6 @@
 <?php include_once "./db.php"; ?>
 
-<h2 class="text-center font-weight-bold">新增作品集</h2>
+<h2 class="text-center font-weight-bold">Add Portfolio</h2>
 <?php
     
 ?>

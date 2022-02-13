@@ -1,7 +1,7 @@
 <?php
-// if (isset($_SESSION['user'])) {
-//     to("./backstage.php?do=manage");
-// }
+if (isset($_SESSION['user'])) {
+    to("./backstage.php?do=manage");
+}
 ?>
 <!-- login -->
 <section class="login-page">
