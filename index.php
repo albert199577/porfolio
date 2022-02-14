@@ -269,3 +269,6 @@
 </body>
 </html>
 
+<script>
+    changeColor();
+</script>

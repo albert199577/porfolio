@@ -158,3 +158,9 @@ const saveContact = async() => {
 // }
 
 
+const changeColor = async () => {
+    let data = await fetch("./api/website_color.php");
+    let parseData = await data.text();
+    console.log(parseData.typeof);
+    $(".about-page, .portfolio-page, .footer").css("background-color", parseData);
+}

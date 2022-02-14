@@ -142,6 +142,7 @@ $Account = new DB('account');
 $Portfolio = new DB('portfolio');
 $Contact = new DB('contact');
 $Work = new DB('work');
+$Color = new DB('color');
 
 
 ?>
