@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-02-13 14:31:03
+-- 產生時間： 2022-02-14 15:43:57
 -- 伺服器版本： 10.4.21-MariaDB
 -- PHP 版本： 7.4.23
 
@@ -58,7 +58,32 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`account`, `password`, `id`) VALUES
-('mso729049', 'addi6463', 1);
+('11111', '11111', 1);
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `color`
+--
+
+CREATE TABLE `color` (
+  `id` int(11) NOT NULL,
+  `color` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- 傾印資料表的資料 `color`
+--
+
+INSERT INTO `color` (`id`, `color`) VALUES
+(1, '#E6F9E8'),
+(2, ''),
+(3, ''),
+(4, ''),
+(5, ''),
+(6, ''),
+(7, ''),
+(8, '');
 
 -- --------------------------------------------------------
 
@@ -80,7 +105,7 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`id`, `name`, `mail`, `subject`, `message`, `sh`) VALUES
-(1, 'alberto', '645he@gmail.com', 'tykty', '', 1);
+(11, 'alberto', '645he@gmail.com', 'tykty', '', 1);
 
 -- --------------------------------------------------------
 
@@ -164,6 +189,12 @@ ALTER TABLE `account`
   ADD PRIMARY KEY (`id`);
 
 --
+-- 資料表索引 `color`
+--
+ALTER TABLE `color`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- 資料表索引 `contact`
 --
 ALTER TABLE `contact`
@@ -202,6 +233,12 @@ ALTER TABLE `about`
 --
 ALTER TABLE `account`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `color`
+--
+ALTER TABLE `color`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `contact`
