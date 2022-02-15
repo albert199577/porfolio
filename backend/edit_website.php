@@ -2,8 +2,9 @@
 <div class="border border-info p-5 mx-auto my-5 w-50">
     <h1 class="text-center">Website</h1>
     <div class="form-group row align-items-center justify-content-center m-5">
-        <label for="color" class="col-6 text-center m-0">Color</label>
-        <select class="form-control col-6" id="color" name="color">
+        <label for="color" class="col-3 text-center m-0">Color</label>
+        <div class="color_demo mx-3" style="width: 30px; height: 30px;"></div>
+        <select class="form-control col-6" id="color" name="color" onchange="changeColor()">
             <option value="#f5f8fd">light blue</option>
             <option value="#CDD4FA">powder blue</option>
             <option value="#C5E3E3">powder green</option>
@@ -37,15 +38,27 @@ const color = async () => {
 const select = async () => {
     let data = await fetch("./api/website_color.php");
     let parseData = await data.text();
-    console.log(typeof parseData);
     let option = document.querySelectorAll("option");
     option.forEach(e => {
-        console.log(e)
         if (e.value == parseData) {
             e.selected = 'selected';
         }
     });
+    let demo = document.querySelector(".color_demo");
+    demo.style.background = parseData;
+}
 
+const changeColor = () => {
+    let option = document.querySelectorAll("option");
+    let demo = document.querySelector(".color_demo");
+    demo.style.backgroundColor = 
+    option.forEach(e => {
+        if (e[selected='selected']) {
+            let color = e.value;
+            console.log(color)
+            demo.style.backgroundColor = color;
+        }
+    });
 }
 select();
 
