@@ -145,22 +145,9 @@ const saveContact = async() => {
     }
 }
 
-
-
-// getName();
-
-// async function manage (table, position) {
-//     let data = await fetch("./api/manage.php");
-//     let parseData = await data.json();
-//     console.log(parseData);
-//     let { name } =  parseData[0];
-//     $("span.logo").html(name);
-// }
-
-
 const changeColor = async () => {
     let data = await fetch("./api/website_color.php");
     let parseData = await data.text();
-    console.log(parseData.typeof);
+    console.log(parseData);
     $(".about-page, .portfolio-page, .footer").css("background-color", parseData);
 }

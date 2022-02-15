@@ -30,19 +30,24 @@ const color = async () => {
             "Content-type": "application/json"
         })
     });
-    let parseData = await data.json();
+    let parseData = await data.text();
     console.log(parseData);
 }
 
-
-let option = document.querySelectorAll("option");
-
-const selectColor = (dbColor) => {
+const select = async () => {
+    let data = await fetch("./api/website_color.php");
+    let parseData = await data.text();
+    console.log(typeof parseData);
+    let option = document.querySelectorAll("option");
     option.forEach(e => {
-        if (e.value == dbColor) {
-            e.true;
+        console.log(e)
+        if (e.value == parseData) {
+            e.selected = 'selected';
         }
     });
+
 }
+select();
+
 
 </script>
