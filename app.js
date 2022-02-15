@@ -140,14 +140,22 @@ const saveContact = async() => {
                 "Content-type": "application/json"
             })
         });
+        let modal = document.querySelector(".mmodal");
+        modal.style.display = "flex";
+        setTimeout(() => {
+            modal.style.display = "none";
+        }, 3000)
     } catch (error) {
         console.log(" Fetch error :, error");
     }
 }
 
-const changeColor = async () => {
+const frontendChangeColor = async () => {
     let data = await fetch("./api/website_color.php");
     let parseData = await data.text();
     console.log(parseData);
     $(".about-page, .portfolio-page, .footer").css("background-color", parseData);
+}
+
+function contactForm () {
 }
