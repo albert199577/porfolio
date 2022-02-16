@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-02-14 15:43:57
+-- 產生時間： 2022-02-16 08:00:40
 -- 伺服器版本： 10.4.21-MariaDB
--- PHP 版本： 7.4.23
+-- PHP 版本： 7.4.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -67,7 +67,7 @@ INSERT INTO `account` (`account`, `password`, `id`) VALUES
 --
 
 CREATE TABLE `color` (
-  `id` int(11) NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL,
   `color` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
@@ -98,7 +98,7 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`id`, `name`, `mail`, `subject`, `message`, `sh`) VALUES
-(11, 'alberto', '645he@gmail.com', 'tykty', '', 1);
+(1, 'alberto', '645he@gmail.com', 'tykty', '', 1);
 
 -- --------------------------------------------------------
 
@@ -143,7 +143,9 @@ CREATE TABLE `portfolio` (
 INSERT INTO `portfolio` (`id`, `name`, `class`, `url`, `github_url`, `img`, `sh`) VALUES
 (2, 'Guess Game', 'website', 'http://220.128.133.15/s1100405/guess/', '111', 'guess.png', 1),
 (6, 'Weather', 'website', '', '111', 'weather.png', 1),
-(7, 'Vote System', 'design', '', '', 'vote.png', 1);
+(7, 'Vote System', 'website', '', '', 'vote.png', 1),
+(13, 'travel poster', 'design', './img/PS旅遊海報.jpg', '', 'PS旅遊海報.jpg', 1),
+(14, 'canlendar', 'website', './img/虎年年曆.jpg', '', 'PS虎年年曆.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -231,13 +233,13 @@ ALTER TABLE `account`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `color`
 --
 ALTER TABLE `color`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `experience`
@@ -249,7 +251,7 @@ ALTER TABLE `experience`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `portfolio`
 --
 ALTER TABLE `portfolio`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `work`
