@@ -212,7 +212,7 @@ nav .menu li a:hover {
   border-bottom: solid 2px #b0c7df;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   .nav-flex {
     display: block;
     position: -webkit-sticky;

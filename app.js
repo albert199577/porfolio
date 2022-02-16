@@ -4,6 +4,7 @@ let logo = document.querySelector(".logo");
 const home = document.querySelector("#home");
 const about = document.querySelector("#about");
 const portfolio = document.querySelector("#portfolio");
+const experience = document.querySelector("#experience");
 const contact = document.querySelector("#contact");
 let navTag = document.querySelectorAll("nav ul li a[href]");
 
@@ -29,9 +30,11 @@ window.addEventListener("scroll", () => {
 window.addEventListener("scroll", () => {
     let windowY = window.pageYOffset;
     clear_underline();
-    if (windowY >= 2000) {
-        navTag[3].classList.add("nav-scroll-underline");
+    if (windowY >= 3700) {
+        navTag[4].classList.add("nav-scroll-underline");
     } else if (windowY >= portfolio.offsetTop) {
+        navTag[3].classList.add("nav-scroll-underline");
+    } else if (windowY >= experience.offsetTop) {
         navTag[2].classList.add("nav-scroll-underline");
     } else if (windowY >= about.offsetTop) {
         navTag[1].classList.add("nav-scroll-underline");
