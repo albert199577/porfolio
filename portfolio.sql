@@ -48,17 +48,17 @@ INSERT INTO `about` (`id`, `name`, `title`, `intro`) VALUES
 --
 
 CREATE TABLE `account` (
+  `id` int(11) UNSIGNED NOT NULL,
   `account` varchar(18) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `password` varchar(18) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `id` int(11) UNSIGNED NOT NULL
+  `password` varchar(18) COLLATE utf8mb4_unicode_520_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- 傾印資料表的資料 `account`
 --
 
-INSERT INTO `account` (`account`, `password`, `id`) VALUES
-('11111', '11111', 1);
+INSERT INTO `account` (`id`, `account`, `password`) VALUES
+(1, '11111', '11111');
 
 -- --------------------------------------------------------
 
@@ -141,11 +141,11 @@ CREATE TABLE `portfolio` (
 --
 
 INSERT INTO `portfolio` (`id`, `name`, `class`, `url`, `github_url`, `img`, `sh`) VALUES
-(2, 'Guess Game', 'website', 'http://220.128.133.15/s1100405/guess/', '111', 'guess.png', 1),
-(6, 'Weather', 'website', '', '111', 'weather.png', 1),
-(7, 'Vote System', 'website', '', '', 'vote.png', 1),
-(13, 'travel poster', 'design', './img/PS旅遊海報.jpg', '', 'PS旅遊海報.jpg', 1),
-(14, 'canlendar', 'website', './img/虎年年曆.jpg', '', 'PS虎年年曆.jpg', 1);
+(1, 'Guess Game', 'website', 'http://220.128.133.15/s1100405/guess/', '111', 'guess.png', 1),
+(2, 'Weather', 'website', '', '111', 'weather.png', 1),
+(3, 'Vote System', 'website', '', '', 'vote.png', 1),
+(4, 'travel poster', 'design', './img/PS旅遊海報.jpg', '', 'PS旅遊海報.jpg', 1),
+(5, 'canlendar', 'website', './img/虎年年曆.jpg', '', 'PS虎年年曆.jpg', 1);
 
 -- --------------------------------------------------------
 

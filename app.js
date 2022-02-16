@@ -32,11 +32,11 @@ window.addEventListener("scroll", () => {
     clear_underline();
     if (windowY >= 3700) {
         navTag[4].classList.add("nav-scroll-underline");
-    } else if (windowY >= portfolio.offsetTop) {
+    } else if (windowY >= portfolio.offsetTop - 1) {
         navTag[3].classList.add("nav-scroll-underline");
-    } else if (windowY >= experience.offsetTop) {
+    } else if (windowY >= experience.offsetTop - 1) {
         navTag[2].classList.add("nav-scroll-underline");
-    } else if (windowY >= about.offsetTop) {
+    } else if (windowY >= about.offsetTop - 1) {
         navTag[1].classList.add("nav-scroll-underline");
     } else {
         navTag[0].classList.add("nav-scroll-underline");

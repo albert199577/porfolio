@@ -8,8 +8,8 @@
                     <td>Picture</td>
                     <td>Name</td>
                     <td>Class</td>
-                    <td class='col-2'>Github Url</td>
-                    <td class='col-2'>Url</td>
+                    <!-- <td class='col-2'>Github Url</td> -->
+                    <td class='col-4'>Url</td>
                     <td>Status</td>
                     <td colspan="3">Manage</td>
                 </tr>
@@ -27,9 +27,9 @@
                     <td>
                         <?=$row['class'];?>
                     </td>
-                    <td>
+                    <!-- <td>
                         <?=$row['github_url'];?>
-                    </td>
+                    </td> -->
                     <td>
                         <?=$row['url'];?>
                     </td>
