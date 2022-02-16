@@ -17,6 +17,12 @@
         <button class="btn btn-info mx-auto" onclick="color()">Edit</button>
     </div>
 </div>
+<section class="mmodal">
+	<section class="modal-con">
+		<i class="fa-solid fa-circle-check"></i>
+		<p>Update completed</p>
+	</section>
+</section>
 
 <script>
 const color = async () => {
@@ -33,6 +39,11 @@ const color = async () => {
     });
     let parseData = await data.text();
     console.log(parseData);
+    let modal = document.querySelector(".mmodal");
+    modal.style.display = "flex";
+    setTimeout(() => {
+        modal.style.display = "none";
+    }, 1500)
 }
 
 const select = async () => {

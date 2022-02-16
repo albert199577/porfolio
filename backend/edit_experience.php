@@ -71,7 +71,12 @@
         </section>
     </div>
 </section>
-
+<section class="mmodal">
+	<section class="modal-con">
+		<i class="fa-solid fa-circle-check"></i>
+		<p>Update completed</p>
+	</section>
+</section>
 <script>
     const edu = async() => {
 		let formData = {
@@ -87,8 +92,13 @@
 				"Content-type": "application/json"
 			})
 		});
-		let parseData = await data.json();
+		let parseData = await data.text();
 		console.log(parseData);
+        let modal = document.querySelector(".mmodal");
+        modal.style.display = "flex";
+        setTimeout(() => {
+            modal.style.display = "none";
+        }, 1500)
 	}
 
     const work = async() => {
@@ -105,7 +115,12 @@
 				"Content-type": "application/json"
 			})
 		});
-		let parseData = await data.json();
+		let parseData = await data.text();
 		console.log(parseData);
+        let modal = document.querySelector(".mmodal");
+        modal.style.display = "flex";
+        setTimeout(() => {
+            modal.style.display = "none";
+        }, 1500)
 	}
 </script>

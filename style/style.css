@@ -941,6 +941,12 @@ nav .menu li a:hover {
   border: 1px solid #dfdbdb;
 }
 
+.mmodal .modal-con i {
+  font-size: 5rem;
+  color: #71df89;
+  margin-top: 3rem;
+}
+
 .mmodal .modal-con section {
   margin-top: 2rem;
 }
