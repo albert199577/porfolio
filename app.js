@@ -49,7 +49,7 @@ function clear_underline() {
     })
 }
 
-//option list switch
+//portfolio option list switch
 let optionBtn = document.querySelectorAll("ul.portfolio-list-menu li");
 
 optionBtn.forEach(e => {
@@ -158,7 +158,4 @@ const frontendChangeColor = async () => {
     let parseData = await data.text();
     console.log(parseData);
     $(".about-page, .portfolio-page, .footer").css("background-color", parseData);
-}
-
-function contactForm () {
 }

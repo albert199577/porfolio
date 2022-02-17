@@ -277,7 +277,6 @@
     <script src="app.js"></script>
 </body>
 </html>
-
 <script>
     frontendChangeColor();
 </script>

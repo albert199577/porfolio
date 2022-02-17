@@ -45,29 +45,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="app.js"></script>
+    <script src="back-app.js"></script>
 </body>
 </html>
-
-<script>
-    const checkLogin = async() => {
-        let formData = {
-            account: $("#account").val(),
-            password: $("#password").val(),
-        };
-        let data = await fetch("./api/check_login.php", {
-            method: "POST",
-            body: JSON.stringify(formData),
-            headers: new Headers({
-                "Content-type": "application/json"
-            })
-        });
-        let parseData = await data.json();
-        console.log(parseData);
-        if (parseData) {
-            location.href = "backstage.php?do=manage";
-        } else {
-            $("#error").text("帳號密碼錯誤, 請重新輸入");
-        }
-    }
-</script>
